@@ -1,0 +1,2 @@
+---
+- include: clone_bash_scripts.yml

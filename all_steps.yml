@@ -1,0 +1,25 @@
+---
+- name: ALL
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: BASE DEV
+      command: ansible-playbook -i inventory/dev base.yml
+    
+    - name: BASE STORAGE
+      command: ansible-playbook -i inventory/storage base.yml
+
+    - name: BOOST localhost
+      command: ansible-playbook -i inventory/storage copy_boost_from_storage.yml
+
+    - name: BOOST remote hosts
+      command: ansible-playbook -i inventoery/dev copy_boost_to_remote_hosts.yml
+
+    - name: INSTALL TOOLS
+      command: ansible-playbook -i inventory/dev tools.yml
+
+    - name: INSTALL GCC
+      command: ansible-playbook -i inventory/dev install_gcc.yml
+
+      #- name: install boost
+      #command: ansible-playbook -i inventory/dev install_boost_remote_hosts.yml

@@ -1,0 +1,9 @@
+---
+- name: Copy from remote hosts
+  synchronize:
+    src: ../home/user/boost
+    dest: /home/user
+    mode: pull
+    dirs: yes
+    owner: no
+    group: no
