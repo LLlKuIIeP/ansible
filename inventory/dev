@@ -1,9 +1,14 @@
-[localhost]
-localhost ansible_connection=local
-
 [ubuntu_gcc]
-ubuntu_server_1 ansible_connection=ssh ansible_host=10.10.3.160 ansible_user=root
-ubuntu_server_2 ansible_connection=ssh ansible_host=10.10.2.129 ansible_user=root
+#ubuntu_server_1  ansible_host=10.10.3.160
+ubuntu_server_2 ansible_host=10.10.2.129
 
-[ubuntu_storage]
-ubuntu_storage ansible_connection=ssh  ansuble_host-10.10.3.154 ansible_user=root
+[ubuntu_gcc:vars]
+ansible_connection=ssh
+ansible_user=root
+
+[ubuntu_storages]
+ubuntu_storage_1 ansible_host=10.10.3.154
+
+[ubuntu_storages:vars]
+ansible_connection=ssh
+ansible_user=root

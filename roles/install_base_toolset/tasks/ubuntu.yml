@@ -1,0 +1,51 @@
+---
+- name: Install make
+  apt:
+    pkg:
+      - make
+    state: present
+  tags:
+    - install_make
+
+- name: Install cmake
+  apt:
+    pkg:
+      - cmake
+    state: present
+  tags:
+    - install_cmake
+
+- name: Install vim
+  apt:
+    pkg:
+      - vim
+    state: present
+  tags:
+    - installl_vim
+
+- name: Install net-tools
+  apt:
+    pkg:
+      - net-tools
+    state: present
+  tags:
+    - install_net_tools
+
+- name: Install git
+  apt:
+    pkg:
+      - git
+    state: present
+  tags:
+    - install_git
+
+- name: Install libs
+  apt:
+    pkg:
+      - libglu1-mesa-dev
+      - libgl1-mesa-dev
+      - mesa-common-dev
+      - libxt-dev
+    state: present
+  tags:
+    - install_libs

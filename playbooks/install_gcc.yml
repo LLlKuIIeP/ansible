@@ -1,0 +1,8 @@
+---
+- hosts: ubuntu_gcc
+  tasks:
+    - name: Install gcc
+      apt: name=gcc state=latest
+
+    - name: Install g++
+      apt: name=g++ state=latest    

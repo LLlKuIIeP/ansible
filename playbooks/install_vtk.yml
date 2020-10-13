@@ -1,0 +1,8 @@
+---
+- name: Install VTK
+  hosts: all
+  roles:
+    - copy_vtk_to_remote_hosts
+    - git_clone
+    - base_toolset
+    - install_vtk

@@ -1,0 +1,5 @@
+---
+- name: Copy VTK from storage
+  hosts: ubuntu_storage
+  roles:
+    - copy_vtk_from_storage
