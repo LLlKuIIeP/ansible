@@ -1,0 +1,10 @@
+---
+- name: Copy Boost to remote hosts gcc
+  hosts: ubuntu_gcc 
+  roles:
+    - copy_boost_to_remote_host
+
+- name: Copy Boost to remote hosts clang
+  hosts: ubuntu_clang
+  roles:
+    - copy_boost_to_remote_host

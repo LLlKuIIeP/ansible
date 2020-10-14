@@ -45,7 +45,7 @@
       - libglu1-mesa-dev
       - libgl1-mesa-dev
       - mesa-common-dev
-      - libxt-dev
+      - libxt-dev  
     state: present
   tags:
     - install_libs

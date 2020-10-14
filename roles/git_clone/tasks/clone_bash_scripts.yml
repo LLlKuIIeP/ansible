@@ -1,8 +1,0 @@
----
-- name: clone
-  git:
-    repo: https://github.com/LLlKuIIeP/bash_scripts.git
-    dest: /home/user/bash_scripts
-    force: yes
-    #- name: build boost
-    #  shell: /home/user/bash_scripts/install_boost.sh

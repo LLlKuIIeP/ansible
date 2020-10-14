@@ -1,0 +1,7 @@
+---
+- name: Remove folder vtk_sources
+  file:
+    path: /tmp/vtk_sources
+    state: absent
+  tags:
+    - remove_folder_vtk_sources

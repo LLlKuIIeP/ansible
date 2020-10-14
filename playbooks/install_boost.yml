@@ -1,7 +1,13 @@
 ---
-- name: Install Boost
-  hosts: all
+- name: Install Boost gcc
+  hosts: ubuntu_gcc
   roles:
-    - copy_boost_to_remote_hosts
-    - git_clone
+    - install_gcc
+    - install_boost
+
+
+- name: Install Boost clang
+  hosts: ubuntu_clang
+  roles:
+    - install_clang
     - install_boost

@@ -1,8 +1,10 @@
 ---
 - name: Copy to remote host
   synchronize:
-    src: ../boost
-    dest: /home/user
+    src: ../../../../tmp/boost
+    dest: /tmp
     owner: no
     group: no
     dirs: yes
+  tags:
+    - copy_boost_to_remote_hosts

@@ -1,0 +1,8 @@
+---
+- name: Clone bash_scripts
+  git:
+    repo: https://github.com/LLlKuIIeP/bash_scripts.git
+    dest: /tmp/bash_scripts
+    force: yes
+  tags:
+    - git_clone_bash_scripts

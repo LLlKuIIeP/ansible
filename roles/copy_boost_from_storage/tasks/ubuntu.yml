@@ -2,8 +2,10 @@
 - name: Copy from remote hosts
   synchronize:
     src: ../home/user/boost
-    dest: /home/user
+    dest: /tmp
     mode: pull
     dirs: yes
     owner: no
     group: no
+  tags:
+    - copy_boost_from_storage

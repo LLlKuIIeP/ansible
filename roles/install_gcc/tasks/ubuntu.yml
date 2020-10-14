@@ -1,0 +1,16 @@
+---
+- name: Install gcc
+  apt:
+    pkg:
+      - gcc
+    state: present
+  tags:
+    - install_gcc
+
+- name: Install g++
+  apt:
+    pkg:
+      - g++
+    state: present
+  tags:
+    - install_g++

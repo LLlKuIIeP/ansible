@@ -2,8 +2,10 @@
 - name: Copy VTK from remote storage
   synchronize:
     src: ../home/user/vtk_sources
-    dest: /home/user
+    dest: /tmp
     mode: pull
     dirs: yes
     owner: no
     group: no
+  tags:
+    - copy_vtk_from_remote_storage

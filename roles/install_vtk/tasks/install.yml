@@ -1,3 +1,0 @@
----
-- name: install
-  shell: bash /home/user/bash_scripts/install_vtk.sh

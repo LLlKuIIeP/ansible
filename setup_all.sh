@@ -6,3 +6,6 @@ ansible-playbook -i inventory/dev playbooks/base.yml
 
 echo -e "\n\n\tinstall_base_toolset.yml\n"
 ansible-playbook -i inventory/dev playbooks/install_base_toolset.yml
+
+echo -e "\n\n\tinstall_gcc.yml\n"
+ansible-playbook -i inventory/dev playbooks/install_gcc.yml

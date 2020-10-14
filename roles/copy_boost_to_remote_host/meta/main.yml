@@ -1,0 +1,4 @@
+---
+dependencies:
+  - install_python
+  - remove_folder_boost

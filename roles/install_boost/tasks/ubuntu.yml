@@ -1,0 +1,5 @@
+---
+- name: Install Boost
+  shell: bash /tmp/bash_scripts/install_boost.sh
+  tags:
+    - install_boost

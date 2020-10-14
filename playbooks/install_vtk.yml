@@ -1,8 +1,13 @@
 ---
-- name: Install VTK
-  hosts: all
+- name: Install VTK gcc
+  hosts: ubuntu_gcc
   roles:
-    - copy_vtk_to_remote_hosts
-    - git_clone
-    - base_toolset
+    - install_gcc
+    - install_vtk
+
+
+- name: Install VTK clang
+  hosts: ubuntu_clang
+  roles:
+    - install_clang
     - install_vtk

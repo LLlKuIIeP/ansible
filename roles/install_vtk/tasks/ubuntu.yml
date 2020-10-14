@@ -1,0 +1,12 @@
+---
+- name: Remove build folder VTK
+  file: 
+    path: /tmp/vtk_build
+    state: absent
+  tags:
+    -remove_build_folder_vtk
+
+- name: Install VTK
+  shell: /tmp/bash_scripts/install_vtk.sh
+  tags:
+    - install_vtk

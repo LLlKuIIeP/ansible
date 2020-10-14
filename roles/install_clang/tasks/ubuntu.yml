@@ -1,0 +1,16 @@
+---
+- name: Install gcc
+  apt:
+    pkg:
+      - clang
+    state: present
+  tags:
+    - install_clang
+
+- name: Install clang-9
+  apt:
+    pkg:
+      - clang-9
+    state: present
+  tags:
+    - install_clang-9

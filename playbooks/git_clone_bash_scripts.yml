@@ -1,0 +1,11 @@
+---
+- name: Clone bash_scripts gcc
+  hosts: ubuntu_gcc
+  roles:
+    - git_clone_bash_scripts
+
+
+- name: Clone bash_scripts clang 
+  hosts: ubuntu_clang
+  roles:
+    - git_clone_bash_scripts

@@ -1,0 +1,7 @@
+---
+- name: Remove folder Boost
+  file:
+    path: /tmp/boost
+    state: absent
+  tags:
+    - remove_folder_boost

@@ -1,0 +1,6 @@
+---
+dependencies:
+  - install_python
+  - install_base_toolset
+  - copy_vtk_to_remote_host
+  - git_clone_bash_scripts

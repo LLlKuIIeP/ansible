@@ -1,8 +1,10 @@
 ---
 - name: Copy VTK to remote hosts
   synchronize:
-    src: ../vtk_sources
-    dest: /home/user
+    src: ../../../../tmp/vtk_sources
+    dest: /tmp
     owner: no
     group: no
     dirs: yes
+  tags:
+    - copy_vtk_to_remote_host
