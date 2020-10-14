@@ -1,5 +1,0 @@
----
-- name: Copy Boost from storage
-  hosts: ubuntu_storage
-  roles:
-    - copy_boost_from_storage

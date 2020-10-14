@@ -1,7 +1,0 @@
----
-- name: Install Boost
-  hosts: all
-  roles:
-    - copy_boost_to_remote_hosts
-    - git_clone
-    - install_boost

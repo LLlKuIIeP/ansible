@@ -1,5 +1,0 @@
----
-- name: Copy VTK to remote hosts
-  hosts: ubuntu_gcc
-  roles:
-    - copy_vtk_to_remote_hosts

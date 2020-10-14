@@ -1,5 +1,0 @@
----
-- name: Install base toolset
-  hosts: all
-  roles:
-    - base_toolset

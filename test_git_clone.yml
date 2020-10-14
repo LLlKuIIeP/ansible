@@ -1,5 +1,0 @@
----
-- name: Test git clone
-  hosts: all
-  roles:
-    - git_clone
