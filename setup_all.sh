@@ -1,11 +1,9 @@
 #!/bin/bash
 
 
-echo -e "\n\n\tbase.yml\n"
-ansible-playbook -i inventory/dev playbooks/base.yml
+echo -e "\n\n\tInstall Boost\n"
+ansible-playbook -i inventory/dev playbooks/install_boost.yml
 
-echo -e "\n\n\tinstall_base_toolset.yml\n"
-ansible-playbook -i inventory/dev playbooks/install_base_toolset.yml
 
-echo -e "\n\n\tinstall_gcc.yml\n"
-ansible-playbook -i inventory/dev playbooks/install_gcc.yml
+echo -e "\n\n\tInstall VTK\n"
+ansible-playbook -i inventory/dev playbooks/install_vtk.yml

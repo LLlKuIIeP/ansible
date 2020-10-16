@@ -1,0 +1,6 @@
+---
+- name: Install Qt 5.15.1
+  hosts: ubuntu_gcc
+  roles:
+    - install_gcc
+    - install_qt_5.15.1

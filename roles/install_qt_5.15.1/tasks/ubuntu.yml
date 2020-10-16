@@ -1,0 +1,26 @@
+---
+- name: Remove build folder Qt 5.15.1
+  file:
+      path: /tmp/qt_build_5.15.1
+      state: absent
+  tags:
+    - remove_build_folder_qt_5.15.1
+
+- name: Remove tar archive Qt 5.15.1
+  file:
+      path: /tmp/qt-everywhere-src-5.15.1.tar.xz
+      state: absent
+  tags:
+      remove_qt_5.15.1_archvive
+
+- name: Remove unarchive Qt 5.15.1
+  file:
+      path: /tmp/qt-everywhere-src-5.15.1
+      state: absent
+  tags:
+      remove_qt_5.15.1_unarchive
+
+- name: Install Qt 5.15.1
+  shell: /tmp/bash_scripts/install_qt_5.15.1.sh
+  tags:
+    - install_qt_5.15.1

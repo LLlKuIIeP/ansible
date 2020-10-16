@@ -1,0 +1,5 @@
+---
+dependencies:
+  - install_python
+  - install_base_toolset
+  - git_clone_bash_scripts
