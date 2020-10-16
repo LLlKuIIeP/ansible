@@ -6,12 +6,12 @@
   tags:
     - remove_build_folder_qt_5.15.1
 
-- name: Remove tar archive Qt 5.15.1
-  file:
-      path: /tmp/qt-everywhere-src-5.15.1.tar.xz
-      state: absent
-  tags:
-      remove_qt_5.15.1_archvive
+      #- name: Remove tar archive Qt 5.15.1
+      #  file:
+      #      path: /tmp/qt-everywhere-src-5.15.1.tar.xz
+      #      state: absent
+      #  tags:
+      #      remove_qt_5.15.1_archvive
 
 - name: Remove unarchive Qt 5.15.1
   file:
@@ -20,7 +20,41 @@
   tags:
       remove_qt_5.15.1_unarchive
 
-- name: Install Qt 5.15.1
-  shell: /tmp/bash_scripts/install_qt_5.15.1.sh
+- name: Download Qt 5.15.1
+  get_url:
+    url: http://download.qt.io/official_releases/qt/5.15/5.15.1/single/qt-everywhere-src-5.15.1.tar.xz
+    dest: /tmp/qt-everywhere-src-5.15.1.tar.xz
+    force: yes
+    mode: '0644'
+  tags:
+    - download_qt_5.15.1 
+
+- name: Unarchive Qt 5.15.1
+  unarchive:
+    src: /tmp/qt-everywhere-src-5.15.1.tar.xz
+    dest: /tmp
+    remote_src: yes
+  tags:
+    - unarchive_qt_5.15.1
+
+- name: Configure Qt 5.15.1
+  shell: ./configure -prefix /usr/local -release -platform linux-g++-64 -opensource -confirm-license -make libs -nomake tests -nomake examples -skip qtserialport
+  args:
+    chdir: /tmp/qt-everywhere-src-5.15.1
+    executable: /bin/bash
   tags:
     - install_qt_5.15.1
+
+- name: Make all Qt 5.15.1
+  shell: make -j 8
+  args:
+    chdir: /tmp/qt-everywhere-src-5.15.1
+  tags:
+    - make_all_qt_5.15.1
+
+- name: Make install Qt 5.15.1
+  make:
+    chdir: /tmp/qt-everywhere-src-5.15.1
+    target: install
+  tags:
+    - make_install_qt_5.15.1
