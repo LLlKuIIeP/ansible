@@ -149,6 +149,14 @@
       - libxss-dev
       - libxtst-dev
       - libwayland-dev
+      - zlib
+      - zlib1g 
+      - zlib1g-dev
+      - zlibc
+      - libjpeg
+      - libjpeg-dev
+      - libpng-dev
+      - libpng++-dev
       - perl
       - python2
       - ruby
