@@ -42,8 +42,6 @@
 - name: Install libs
   apt:
     pkg:
-      - libglu1-mesa-dev
-      - libgl1-mesa-dev
       - mesa-common-dev
       - libxt-dev
       - bison
@@ -160,10 +158,10 @@
       - perl
       - python2
       - ruby
-      - freetype
       - pcre2
       - pcre3
       - harfbuzz
+      - xclip
     state: present
   tags:
     - install_libs
