@@ -163,6 +163,7 @@
       - freetype
       - pcre2
       - pcre3
+      - harfbuzz
     state: present
   tags:
     - install_libs
