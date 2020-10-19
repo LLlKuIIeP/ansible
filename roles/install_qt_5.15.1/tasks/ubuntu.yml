@@ -38,7 +38,7 @@
     - unarchive_qt_5.15.1
 
 - name: Configure Qt 5.15.1
-  shell: ./configure -prefix /usr/local -release -platform linux-g++-64 -opensource -confirm-license -make libs -nomake tests -nomake examples -skip qtserialport -system-zlib -system-libjpeg -system-libpng -system-freetype -system-pcre -system-harfbuzz -glib -stl -xrandr -xfixes -xfixes -fontconfig -tablet -xkb -xcursor xinerama -xshape -sm -opengl -pch -dbus iconv cups -nis -openssl
+  shell: ./configure -prefix /usr/local -release -platform linux-g++-64 -opensource -confirm-license -make libs -nomake tests -nomake examples -skip qtserialport -system-zlib -system-libjpeg -system-libpng -system-libmng -system-freetype -system-pcre -system-harfbuzz system-libtiff -glib -stl -xrandr -xfixes -xfixes -fontconfig -tablet -xkb -xcursor xinerama -xshape -sm -opengl -pch -dbus iconv cups -nis -openssl -webkit -svg -phonon-backend -phonon -xmlpatterns -largefile -no-exceptions -qt-sql-sqlite -qt-sql-mysql -qt-sql-psql -plugin-sql-sqlite -plugin-sql-mysql -plugin-sql-psql
   args:
     chdir: /tmp/qt-everywhere-src-5.15.1
     executable: /bin/bash
