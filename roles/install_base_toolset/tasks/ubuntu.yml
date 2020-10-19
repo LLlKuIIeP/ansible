@@ -161,6 +161,8 @@
       - python2
       - ruby
       - freetype
+      - pcre2
+      - pcre3
     state: present
   tags:
     - install_libs
