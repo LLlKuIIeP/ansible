@@ -46,7 +46,7 @@
     - install_qt_5.15.1
 
 - name: Make all Qt 5.15.1
-  shell: make -j 8
+  shell: make
   args:
     chdir: /tmp/qt-everywhere-src-5.15.1
   tags:

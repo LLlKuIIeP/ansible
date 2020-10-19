@@ -1,10 +1,6 @@
 [ubuntu_gcc]
 #ubuntu_server_1  ansible_host=10.10.3.160
-ubuntu_server_2 ansible_host=10.10.2.129
-
-[ubuntu_gcc:vars]
-ansible_connection=ssh
-ansible_user=root
+ubuntu_server_2 ansible_host=10.10.1.218
 
 [ubuntu_storage]
 ubuntu_storage_1 ansible_host=10.10.3.154
