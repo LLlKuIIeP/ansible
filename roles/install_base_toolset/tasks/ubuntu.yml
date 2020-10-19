@@ -98,6 +98,8 @@
       - libmng-dev
       - libxcb-present-dev
       - libxcb-present0
+      - libpcre3
+      - libpcre3-dev
       - libxcb-randr0
       - libxcb-randr0-dev
       - libxcb-record0
@@ -159,7 +161,6 @@
       - python2
       - ruby
       - pcre2-utils
-      - pcre3
       - harfbuzz
       - xclip
     state: present
