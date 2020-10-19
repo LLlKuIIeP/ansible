@@ -72,6 +72,7 @@
       - libudev-dev
       - libx11-dev
       - libx11-xcb-dev
+      - libharfbuzz-dev
       - libxcb-composite0
       - libxcb-composite0-dev
       - libxcb-cursor-dev
@@ -161,7 +162,6 @@
       - python2
       - ruby
       - pcre2-utils
-      - harfbuzz
       - xclip
     state: present
   tags:
