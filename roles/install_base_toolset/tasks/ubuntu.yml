@@ -96,6 +96,8 @@
       - libxcb-image0-dev
       - libxcb-keysyms1
       - libxcb-keysyms1-dev
+      - libmng2
+      - libmng-dev
       - libxcb-present-dev
       - libxcb-present0
       - libxcb-randr0
