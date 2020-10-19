@@ -158,8 +158,8 @@
       - perl
       - python2
       - ruby
-      - pcre2
-      - pcre3
+      - pcre2-utils
+      - pcre3-utils
       - harfbuzz
       - xclip
     state: present
