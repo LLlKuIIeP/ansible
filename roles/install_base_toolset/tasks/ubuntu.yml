@@ -160,6 +160,7 @@
       - perl
       - python2
       - ruby
+      - freetype
     state: present
   tags:
     - install_libs
