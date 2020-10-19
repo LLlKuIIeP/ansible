@@ -159,7 +159,7 @@
       - python2
       - ruby
       - pcre2-utils
-      - pcre3-utils
+      - pcre3
       - harfbuzz
       - xclip
     state: present
