@@ -154,7 +154,6 @@
       - zlib1g 
       - zlib1g-dev
       - zlibc
-      - libjpeg
       - libjpeg-dev
       - libpng-dev
       - libpng++-dev
