@@ -151,7 +151,6 @@
       - libxss-dev
       - libxtst-dev
       - libwayland-dev
-      - zlib
       - zlib1g 
       - zlib1g-dev
       - zlibc
