@@ -1,0 +1,37 @@
+---
+- name: Add Kubernetes apt-key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add Kubernetes' APT repository
+  apt_repository:
+    repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: 'kubernetes'
+
+- name: Install kubelet
+  apt:
+    pkg:
+      - kubelet
+    state: present
+    update_cache: yes
+
+- name: Install kubeadm
+  apt:
+    pkg:
+      - kubeadm
+    state: present
+
+- name: Deamon-Reload
+  shell: systemctl daemon-reload
+
+- name: Restart Kubelet
+  service:
+    name: kubelet
+    state: restarted
+    enabled: yes
+
+- name: Disable Swap
+  shell: swapoff -a
+

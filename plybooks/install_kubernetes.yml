@@ -1,0 +1,11 @@
+---
+- name: Install Kubelet And Kubeadm
+  hosts: cluster_servers
+  roles:
+    - install_kubelet_kubeadm
+
+- name: Install Kubectl
+  hosts: master_servers
+  roles:
+    - install_kubectl
+

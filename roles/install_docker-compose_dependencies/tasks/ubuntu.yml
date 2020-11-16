@@ -1,0 +1,9 @@
+---
+- name: Install Docker-Compose Dependencies
+  apt:
+    pkg:
+      - curl
+      - jq
+    state: present
+  tags:
+    - install_docker_compose_dependencies

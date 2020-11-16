@@ -1,0 +1,61 @@
+---
+- name: Install Kubectl
+  apt:
+    pkg:
+      - kubectl
+    state: present
+
+#Если что-то пошло не так, вы всегда можете начать с начала, выполнив на нужном вам узле кластера команду:
+#kubeadm reset
+    
+### --- На мастер-сервере выполните команду:
+# kubeadm init --api-advertise-addresses=192.168.0.4 --api-external-dns-names=master-1.comp.avmaksimov.ru --pod-network-cidr 10.244.0.0/16
+# —api-advertise-addresses — устанавливает IP-адрес, на котором будет слушать API-сервис, нужный для взаимодействия с кластером утилиты kubectl. В нашем случае — 192.168.0.4. Если не указывать этот параметр, будет использоваться IP-адрес интерфейса, смотрящего в сеть шлюза по-умолчанию
+# —pod-network-cidr — сообщает кластеру адресное пространство (10.244.0.0/16) виртуальных сетей используемых во flannel. Оно задается в файле конфигурации flannel, ссылка на который приведена по URL из вывода kubeadm
+# —api-external-dns-names — указывает на внешнее DNS имя хоста (в нашем случае master-1.comp.avmaksimov.ru); это позволит вам пройти аутентификацию и авторизацию при использовании kubectl с рабочего места
+# В конце выполнения kubeadm выдаст вам команду и токен для подключения ваших вычислительных узлов.
+
+#  Результат будет таким
+#
+# Your Kubernetes control-plane has initialized successfully!
+
+#To start using your cluster, you need to run the following as a regular user:
+
+    #  mkdir -p $HOME/.kube
+    #sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    #sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+#You should now deploy a pod network to the cluster.
+#Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+#https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+#Then you can join any number of worker nodes by running the following on each as root:
+#kubeadm join 10.10.2.89:6443 --token 1njoau.pfiedjjchdn5qv3s --discovery-token-ca-cert-hash sha256:dd370f23561735cc9089432ee4f9479bba180da9628babb9602e471d0856caff
+
+
+    
+#
+# Настройка виртуальной сети
+# Для настройки виртуальной сети на мастере Kubernetes необходимо выполнить следующую команду:
+# kubectl apply -f https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml?raw=true
+#
+# Убедиться в правильной настройке виртуальной сети можно по запущенному Pod kube-dns из вывода команды:
+# kubectl get pods --all-namespaces
+#
+# Подключение вычислительных узлов
+# Для подключения вычислительных узлов к кластеру необходимо выполнить команду, сообщенную вам kubeadm:
+# kubeadm join --token=aecc37.5d0dfasdf673ecaa 192.168.0.4
+#
+# Проверить корректность подключения узла можно командой:
+# kubectl get nodes
+
+
+
+
+#https://habr.com/ru/post/442614/
+#https://www.digitalocean.com/community/tutorials/how-to-create-a-kubernetes-cluster-using-kubeadm-on-ubuntu-18-04-ru
+#
+#
+#https://habr.com/ru/company/mailru/blog/499676/#1
+#https://habr.com/ru/company/southbridge/blog/439562/
+#https://cloud.croc.ru/blog/byt-v-teme/sozdanie-kubernetes-klastera/

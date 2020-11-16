@@ -1,0 +1,10 @@
+---
+- name: Inatall APT Transport HTTPS
+  apt:
+    pkg:
+      - apt-transport-https
+      - curl
+    state: present
+  tags:
+    - install_kubernetes_dependencies
+
